@@ -21,6 +21,9 @@ install () {
 			xdg-utils xdg-user-dirs policykit-1 libnotify-bin dunst nano less software-properties-gtk xscreensaver \
 			policykit-1-gnome dex gpicview geany gv flameshot feh -y
 		echo "icewm-session" > $HOME/.xinitrc
+  		# enable acpid
+    		sudo apt-get install acpid -y
+      		sudo systemctl enable acpid
 	fi
 
 	# install theming
@@ -157,7 +160,7 @@ install () {
 
 	# optional install NetworkManager
 	if [[ $nm == yes ]]; then
-	sudo apt-get install network-manager network-manager-gnome -y
+		sudo apt-get install network-manager network-manager-gnome -y
 		if [[ -n "$(uname -a | grep Ubuntu)" ]]; then
 			for file in `find /etc/netplan/* -maxdepth 0 -type f -name *.yaml`; do
 				sudo mv $file $file.bak
