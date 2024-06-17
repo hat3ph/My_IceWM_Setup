@@ -22,8 +22,8 @@ install () {
 			policykit-1-gnome dex gpicview geany gv flameshot feh -y
 		echo "icewm-session" > $HOME/.xinitrc
   		# enable acpid
-    		sudo apt-get install acpid -y
-      		sudo systemctl enable acpid
+    		#sudo apt-get install acpid -y
+      		#sudo systemctl enable acpid
 	fi
 
 	# install theming
@@ -48,17 +48,15 @@ install () {
 		git clone https://github.com/geany/geany-themes.git /tmp/geany-themes
 		cp -r /tmp/geany-themes/colorschemes/* $HOME/.config/geany/colorschemes/
 
-		# install lxterminal dracula theme
+		# install dracula themes
 		git clone https://github.com/dracula/lxterminal.git /tmp/lxterminal
 		mkdir -p $HOME/.config/lxterminal/
 		cp /tmp/lxterminal/lxterminal.conf $HOME/.config/lxterminal/
 
-		# install dracula gtk theme
   		mkdir -p $HOME/.icons
     		wget -P /tmp https://github.com/dracula/gtk/releases/download/v4.0.0/Dracula-cursors.tar.xz
       		tar -xvf /tmp/Dracula-cursors.tar.xz -C $HOME/.icons
 
-  		# install dracula cursor theme
 		mkdir -p $HOME/.themes
 		wget -P /tmp https://github.com/dracula/gtk/releases/download/v4.0.0/Dracula.tar.xz
   		tar -xvf /tmp/Dracula.tar.xz -C $HOME/.themes
