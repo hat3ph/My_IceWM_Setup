@@ -1,5 +1,19 @@
+# Apps Launcher Keybinds
 key "Super+t" /usr/bin/lxterminal
 key "Super+f" /usr/bin/thunar
 key "Super+r" /usr/bin/rofi -show drun
 key "Super+p" $HOME/.local/bin/power.sh
 key "Print" /usr/bin/flameshot gui
+
+# Workspace Keybinds
+key "Pointer_Button4"   icesh goto prev
+key "Pointer_Button5"   icesh goto next
+
+# Audio Pipewire Keybinds
+key "XF86AudioLowerVolume" wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%-
+key "XF86AudioRaiseVolume" wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+
+key "XF86AudioMute" wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+key "Ctrl+Shift+Down" wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%-
+key "Ctrl+Shift+Up" wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+
+key "Ctrl+Shift+M" wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+key "XF86AudioMicMute" wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
