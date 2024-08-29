@@ -40,7 +40,7 @@ install () {
 
 		mkdir -p $HOME/.config/gtk-3.0
 		cp ./config/gtk2 $HOME/.gtkrc-2.0
-		sed -i "s/administrator/"$USER"/g" $HOME/.gtkrc-2.0
+		#sed -i "s/administrator/"$USER"/g" $HOME/.gtkrc-2.0
 		cp ./config/gtk3 $HOME/.config/gtk-3.0/settings.ini
 
 		# add additional geany colorscheme
@@ -54,8 +54,8 @@ install () {
 		cp /tmp/lxterminal/lxterminal.conf $HOME/.config/lxterminal/
 
   		mkdir -p $HOME/.icons
-    		wget -P /tmp https://github.com/dracula/gtk/releases/download/v4.0.0/Dracula-cursors.tar.xz
-      		tar -xvf /tmp/Dracula-cursors.tar.xz -C $HOME/.icons
+    	wget -P /tmp https://github.com/dracula/gtk/releases/download/v4.0.0/Dracula-cursors.tar.xz
+      	tar -xvf /tmp/Dracula-cursors.tar.xz -C $HOME/.icons
 
 		mkdir -p $HOME/.themes
 		wget -P /tmp https://github.com/dracula/gtk/releases/download/v4.0.0/Dracula.tar.xz
